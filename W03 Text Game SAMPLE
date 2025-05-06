@@ -1,0 +1,76 @@
+# Adventure Game: The Quest for the Crystal Compass
+# Shared with two friends who enjoyed the variety of outcomes.
+# They suggested adding a hidden path, so I added a secret keyword option!
+# They were curious how the nested if-statements worked, and I showed them how the choices determine the story.
+
+def adventure_game():
+    print("Welcome to the Quest for the Crystal Compass!")
+    print("You are a young explorer, standing at the entrance of a forgotten jungle temple.")
+    print("Do you want to ENTER the temple, CIRCLE around it, or RETURN to camp?")
+
+    choice1 = input(">> ").strip().lower()
+
+    if choice1 == "enter":
+        print("\nYou step inside. The air is damp and the floor is covered in moss.")
+        print("You come across two paths: one leads to a glowing ROOM, the other to a DARK hallway.")
+        choice2 = input("Do you go to the ROOM or the HALLWAY? >> ").strip().lower()
+
+        if choice2 == "room":
+            print("\nInside the room, you find a pedestal with a glowing orb. A voice asks: 'Speak the secret word.'")
+            secret = input("Say something (Hint: try typing MAGIC): >> ").strip().lower()
+            if secret == "magic":
+                print("The orb glows brighter and reveals a hidden door behind the pedestal!")
+                print("You walk through and discover the Crystal Compass! You've won!")
+            else:
+                print("Nothing happens. The voice says, 'Incorrect,' and the room starts shaking. You run out safely, but empty-handed.")
+        elif choice2 == "hallway":
+            print("\nYou tiptoe down the hallway and trigger a trap. Arrows fly at you!")
+            choice3 = input("Do you DODGE or SHIELD yourself? >> ").strip().lower()
+
+            if choice3 == "dodge":
+                print("You roll out of the way just in time and land next to a treasure chest. You open it and find the Crystal Compass!")
+            elif choice3 == "shield":
+                print("You hold up your backpack, but it’s not enough. You get hit and retreat, injured.")
+            else:
+                print("That's not a valid action. You freeze and get hit by arrows. You limp away to safety.")
+        else:
+            print("That's not a valid path. You trip on a vine and fall back outside.")
+    
+    elif choice1 == "circle":
+        print("\nYou walk around the temple and find a hidden entrance guarded by a sleepy jaguar.")
+        print("Do you try to SNEAK past it, DISTRACT it with food, or ATTACK it?")
+        choice2 = input(">> ").strip().lower()
+
+        if choice2 == "sneak":
+            print("You silently move past the jaguar and enter a secret tunnel.")
+            print("Inside, you find two buttons: RED and BLUE. Which do you press?")
+            choice3 = input("RED or BLUE? >> ").strip().lower()
+            if choice3 == "red":
+                print("The floor opens up and you fall into a pit. Game over.")
+            elif choice3 == "blue":
+                print("A secret panel opens revealing the Crystal Compass! Victory!")
+            else:
+                print("You hesitate too long and the jaguar wakes up. You run for your life!")
+        elif choice2 == "distract":
+            print("You toss some dried meat to the side. The jaguar chases it. You're in!")
+            print("A golden path and a stone stairway lie ahead. GOLDEN or STONE?")
+            choice3 = input(">> ").strip().lower()
+            if choice3 == "golden":
+                print("The path glows and lifts you to the top of the temple. The compass is yours!")
+            elif choice3 == "stone":
+                print("The stairs crumble as you climb. You barely escape with your life.")
+            else:
+                print("Invalid choice. You’re caught in a collapsing stair trap.")
+        elif choice2 == "attack":
+            print("Bold move! The jaguar overpowers you. You barely survive and flee.")
+        else:
+            print("That's not one of your options. The jaguar notices you and chases you off!")
+    
+    elif choice1 == "return":
+        print("\nYou decide it's not worth the risk and return to camp. Maybe next time.")
+    
+    else:
+        print("That's not a valid choice. The jungle remains a mystery.")
+
+# Start the game
+adventure_game()
