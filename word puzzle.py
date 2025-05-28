@@ -1,7 +1,7 @@
 """
 Class: CSE110 Section: A7 Student Name: Alejandro Garcia Trujillo
 Project Word Puzzle
-Creativity Credit Explanation: 
+Creativity Credit Explanation: No extra points
 """
 
 print("Welcome to the Word Guessing Game!")
